@@ -33,8 +33,7 @@ resource "aws_lb_target_group" "dhk_lbtg" {
 
 
 resource "aws_lb_listener" "dhk_listener" {
-  count = 2
-  load_balancer_arn = aws_lb.dhk_lb[count.index].arn   
+  load_balancer_arn = aws_lb.dhk_lb.arn   
   port = var.port_http
   protocol = var.protocol_HTTP
   default_action {
